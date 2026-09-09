@@ -97,9 +97,11 @@ for(let i=0; i<skillbox.length; i++){
 
     if(open){
       skillbox[i].style.maxHeight='100px';
+      showbtn[i].textContent='show skill';
       open = false;
     }else{
      skillbox[i].style.maxHeight='500px';
+     showbtn[i].textContent='hide skill';
       open = true;
     }
 
