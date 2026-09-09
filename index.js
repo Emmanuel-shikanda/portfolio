@@ -85,17 +85,28 @@ git.addEventListener("click",function(){
 
  });
 
- 
 
 
+let showbtn = document.getElementsByClassName('show-btn');
+let skillbox = document.getElementsByClassName('skill-box')
+let open = false;
+
+for(let i=0; i<skillbox.length; i++){
+
+   showbtn[i].addEventListener('click',function(){
+
+    if(open){
+      skillbox[i].style.maxHeight='100px';
+      open = false;
+    }else{
+     skillbox[i].style.maxHeight='500px';
+      open = true;
+    }
+
+   })
 
 
-
-
-
-
-
-
+}
 
 
 
