@@ -85,7 +85,7 @@ git.addEventListener("click",function(){
 
  });
 
-
+//showskill btn
 
 let showbtn = document.getElementsByClassName('show-btn');
 let skillbox = document.getElementsByClassName('skill-box')
@@ -100,7 +100,7 @@ for(let i=0; i<skillbox.length; i++){
       showbtn[i].textContent='show skill';
       open = false;
     }else{
-     skillbox[i].style.maxHeight='500px';
+     skillbox[i].style.maxHeight = '900px';
      showbtn[i].textContent='hide skill';
       open = true;
     }
@@ -109,6 +109,43 @@ for(let i=0; i<skillbox.length; i++){
 
 
 }
+
+
+//tech-stack
+
+let langskillcontainer = document.getElementsByClassName('lang-skill-container');
+let langbtn = document.getElementsByClassName('caret');
+
+for (let i = 0; i < langskillcontainer.length; i++) {
+
+  
+    langbtn[i].addEventListener('click', function() {
+
+        if (langskillcontainer[i].style.maxHeight) {
+
+            langskillcontainer[i].style.maxHeight = null;
+
+            langbtn[i].src =
+                'ICONS/icons8-drop-down-arrow-100.png';
+
+        } else {
+
+            langskillcontainer[i].style.maxHeight =
+                langskillcontainer[i].scrollHeight + 'px';
+
+            langbtn[i].src =
+                'ICONS/icons8-collapse-arrow-100.png';
+        }
+
+    });
+
+}
+
+
+
+
+
+
 
 
 
