@@ -87,65 +87,44 @@ git.addEventListener("click",function(){
 
 //showskill btn
 
-let showbtn = document.getElementsByClassName('show-btn');
-let skillbox = document.getElementsByClassName('skill-box')
-let open = false;
 
-for(let i=0; i<skillbox.length; i++){
+let sbtn = $('.skill-box button');
 
-   showbtn[i].addEventListener('click',function(){
+sbtn.click(function(){
+ $(this).closest('.skill-box').find('.front-skills-list').slideToggle(300)
 
-    if(open){
-      skillbox[i].style.maxHeight='100px';
-      showbtn[i].textContent='show skill';
-      open = false;
-    }else{
-     skillbox[i].style.maxHeight = '900px';
-     showbtn[i].textContent='hide skill';
-      open = true;
-    }
+ if($(this).text() ==='Show Stack'){
+  
+ $(this).text('Hide Stack')
 
-   })
+ }else{
+  $(this).text('Show Stack')
+ }
 
 
-}
-
+})
 
 //tech-stack
 
-let langskillcontainer = document.getElementsByClassName('lang-skill-container');
-let langbtn = document.getElementsByClassName('caret');
+let imgb = $('.lang-skill-container img[alt="Caret-down"]')
 
-for (let i = 0; i < langskillcontainer.length; i++) {
+imgb.click(function(){
+ $(this).closest('.lang-skill-container').find('.lang-skill-text p').slideToggle(300);
 
-  
-    langbtn[i].addEventListener('click', function() {
-
-        if (langskillcontainer[i].style.maxHeight) {
-
-            langskillcontainer[i].style.maxHeight = null;
-
-            langbtn[i].src =
-                'ICONS/icons8-drop-down-arrow-100.png';
-
-        } else {
-
-            langskillcontainer[i].style.maxHeight =
-                langskillcontainer[i].scrollHeight + 'px';
-
-            langbtn[i].src =
-                'ICONS/icons8-collapse-arrow-100.png';
-        }
-
-    });
-
+if($(this).attr('alt')==='Caret-down'){
+  $(this).attr('src','ICONS/icons8-collapse-arrow-100.png');
+   $(this).attr('alt','Caret-up')
+}
+else{
+  $(this).attr('src','ICONS/icons8-drop-down-arrow-100.png');
+  $(this).attr('alt','Caret-down')
 }
 
+})
 
 
 
-
-
+  
 
 
 
